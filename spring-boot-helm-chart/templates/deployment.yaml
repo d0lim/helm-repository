@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ include "spring-boot-helm-chart.fullname" . }}
+  namespace: {{ .Values.namespace }}
   labels:
     {{- include "spring-boot-helm-chart.labels" . | nindent 4 }}
 spec:
@@ -15,6 +16,7 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
+        checksum/config: {{ .Values.properties | quote | sha256sum }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
@@ -42,12 +44,16 @@ spec:
               protocol: TCP
           livenessProbe:
             httpGet:
-              path: /
+              path: /actuator/health/liveness 
               port: http
+            initialDelaySeconds: 10
+            periodSeconds: 3
           readinessProbe:
             httpGet:
-              path: /
+              path: /actuator/health/readiness 
               port: http
+            initialDelaySeconds: 15
+            periodSeconds: 5
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
           {{- with .Values.volumeMounts }}
