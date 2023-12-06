@@ -9,7 +9,9 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  release:
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
 
     # Steps represent a sequence of tasks that will be executed as part of the job
