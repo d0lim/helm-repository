@@ -3,7 +3,6 @@ apiVersion: autoscaling/v2
 kind: HorizontalPodAutoscaler
 metadata:
   name: {{ include "spring-boot-helm-chart.fullname" . }}
-  namespace: {{ .Values.namespace }}
   labels:
     {{- include "spring-boot-helm-chart.labels" . | nindent 4 }}
 spec:
