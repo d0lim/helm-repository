@@ -3,6 +3,16 @@ entries:
   server-app-helm-chart:
   - apiVersion: v2
     appVersion: latest
+    created: "2023-12-07T15:23:08.733881265Z"
+    description: A Helm chart for Kubernetes
+    digest: 3b6795d1f1216100936625097bc62a61b008c6a44bc2c533a0b204520633c121
+    name: server-app-helm-chart
+    type: application
+    urls:
+    - https://github.com/d0lim/helm-repository/releases/download/server-app-helm-chart-0.3.2/server-app-helm-chart-0.3.2.tgz
+    version: 0.3.2
+  - apiVersion: v2
+    appVersion: latest
     created: "2023-12-07T15:15:35.961028035Z"
     description: A Helm chart for Kubernetes
     digest: efdacba68c41db1d3d9623e6b31b467ff9514820b42b6b69f878ca8117124924
@@ -62,4 +72,4 @@ entries:
     urls:
     - https://github.com/d0lim/helm-repository/releases/download/spring-boot-helm-chart-0.1.0/spring-boot-helm-chart-0.1.0.tgz
     version: 0.1.0
-generated: "2023-12-07T15:15:35.961071676Z"
+generated: "2023-12-07T15:23:08.733902716Z"
