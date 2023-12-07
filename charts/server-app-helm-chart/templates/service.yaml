@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ include "spring-boot-helm-chart.fullname" . }}
+  name: {{ include "server-app-helm-chart.fullname" . }}
   labels:
-    {{- include "spring-boot-helm-chart.labels" . | nindent 4 }}
+    {{- include "server-app-helm-chart.labels" . | nindent 4 }}
 spec:
   type: {{ .Values.service.type }}
   ports:
@@ -12,4 +12,4 @@ spec:
       protocol: TCP
       name: http
   selector:
-    {{- include "spring-boot-helm-chart.selectorLabels" . | nindent 4 }}
+    {{- include "server-app-helm-chart.selectorLabels" . | nindent 4 }}
