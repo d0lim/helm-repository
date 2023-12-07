@@ -4,8 +4,6 @@
 
 replicaCount: 1
 
-namespace: service-namespace
-
 image:
   repository: service-image
   pullPolicy: IfNotPresent
