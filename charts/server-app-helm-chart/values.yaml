@@ -54,7 +54,7 @@ ingress:
   hosts:
     - host: service-name.domain
       paths:
-        - path: /
+        - path: '/'
           pathType: Prefix
   tls:
     - secretName: service-name-tls
