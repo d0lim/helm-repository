@@ -14,9 +14,8 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-linkerdEnabled: enabled
-
-podAnnotations: {}
+podAnnotations:
+  linkerd.io/inject: enabled
 
 podLabels: {}
 
@@ -93,7 +92,4 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
-
-properties:
-    key: value
 

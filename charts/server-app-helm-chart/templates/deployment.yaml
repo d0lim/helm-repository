@@ -15,13 +15,11 @@ spec:
     metadata:
       {{- with .Values.podAnnotations }}
       annotations:
-        checksum/config: {{ .Values.properties | quote | sha256sum }}
-        linkerd.io/inject: {{ .Values.linkerdEnabled }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
         {{- include "server-app-helm-chart.labels" . | nindent 8 }}
-	{{- with .Values.podLabels }}
+	      {{- with .Values.podLabels }}
         {{- toYaml . | nindent 8 }}
         {{- end }}
     spec:
@@ -29,7 +27,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "server-app-helm-chart.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
