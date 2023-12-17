@@ -4,7 +4,7 @@
 
 replicaCount: 1
 
-serviceName: default
+appName: default
 
 image:
   repository: service-image
