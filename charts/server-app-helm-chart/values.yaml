@@ -14,8 +14,9 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-podAnnotations:
-  linkerd.io/inject: enabled
+linkerdEnabled: enabled
+
+podAnnotations: {}
 
 podLabels: {}
 

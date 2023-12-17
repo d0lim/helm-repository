@@ -16,6 +16,7 @@ spec:
       {{- with .Values.podAnnotations }}
       annotations:
         checksum/config: {{ .Values.properties | quote | sha256sum }}
+        linkerd.io/inject: {{ .Values.linkerdEnabled }}
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
